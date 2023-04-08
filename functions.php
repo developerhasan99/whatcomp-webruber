@@ -235,3 +235,6 @@ function update_profile_details() {
     wp_send_json_success( );
 
 }
+
+
+// joynal code added
