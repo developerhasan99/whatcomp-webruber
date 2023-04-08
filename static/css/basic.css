@@ -1,0 +1,396 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+::selection {
+	color: #fff;
+	background-color: #3e38c4;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", ubuntu, Arial, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
+	color: #eee;
+	margin: 0;
+	background-image: url(https://lotterylisting.local/wp-content/uploads/2023/04/roystonlodge-Hex-Grid-for-Role-Playing-Game-Maps-1.svg);
+	background-color: #242341;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+p {
+	line-height: 1.7;
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.container {
+	max-width: 1140px;
+}
+
+.mb-5 {
+	margin-bottom: 3rem !important;
+}
+
+.pt-4 {
+	padding: 1.5rem 0;
+}
+
+.py-3 {
+	padding: 1.5rem 0;
+}
+
+.my-3 {
+	margin: 1rem 0;
+}
+
+.py-5 {
+	padding: 3rem 0;
+}
+
+.footer_social_link,
+#comments .form-submit .submit {
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 3px 4px;
+	font-size: 1rem;
+	line-height: 0.7;
+	border-radius: 0.25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input#author,
+input#email,
+textarea#comment,
+.form-control {
+	display: block;
+	width: 100%;
+	height: calc(1.5em + 0.75rem + 2px);
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.search_form_group {
+	position: relative;
+}
+
+.search_form_input {
+	padding-right: 35px;
+}
+
+.search_form_btn {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+
+.content-wrapper {
+	padding: 90px 0;
+}
+
+.archive-post p,
+.featured-post .post-meta p {
+	font-size: 14px;
+	color: #555;
+	display: flex;
+	align-items: center;
+}
+
+.pagination .nav-links {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.pagination .nav-links a {
+	color: #000;
+	text-decoration: none;
+}
+
+.pagination .nav-links a,
+.pagination .nav-links span {
+	display: flex;
+	width: 35px;
+	height: 30px;
+	align-items: center;
+	justify-content: center;
+	border-bottom: #eee 2px solid;
+}
+
+.pagination .nav-links a:hover {
+	border-color: #000;
+}
+
+.pagination .nav-links a.prev,
+.pagination .nav-links a.next {
+	width: 50px;
+}
+.pagination .nav-links span {
+	color: #555;
+	border-color: #000;
+}
+
+.pagination .nav-links span.dots {
+	border-bottom: 0;
+}
+
+.single_page .post_meta h1 {
+	margin-top: 0;
+}
+
+.article #content > ul > li,
+.article #content > ol > li {
+	line-height: 1.7;
+	margin-bottom: 1rem;
+}
+
+.card {
+	background-color: #242341;
+	border: #01b124 3px solid;
+}
+
+.btn-block {
+	width: 100%;
+}
+
+.btn-success {
+	background-color: #01b124;
+}
+
+.btn-success:hover {
+	background-color: #01941e;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.form-select,
+.form-control {
+	color: #fff;
+	background-color: #242341;
+}
+
+.form-select:focus,
+.form-control:focus {
+	color: #fff;
+	border-color: #01b124;
+	background-color: #242341;
+}
+
+/* Dashboard styles */
+.whatcomp-coin {
+	font-size: 25px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.whatcomp-coin span.coin {
+	height: 35px;
+	width: 35px;
+	display: inline-block;
+	border-radius: 50%;
+	line-height: 35px;
+	text-align: center;
+	font-size: 15px;
+	background-color: #01b124;
+}
+
+.dashboard-header-menu-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.list-group-item {
+	background-color: #242341;
+	transition: 0.3s;
+	padding: 0;
+}
+
+.list-group-item a {
+	color: #01b124;
+	text-decoration: none;
+	display: block;
+	padding: 0.5rem 1rem;
+}
+
+.list-group-item.active a,
+.list-group-item:hover a {
+	color: #fff;
+}
+
+.list-group-item:hover,
+.list-group-item.active {
+	background-color: #01b124;
+	border-color: #01b124;
+}
+
+.table {
+	border-color: rgba(0, 0, 0, 0.125);
+	color: #fff;
+}
+
+/* Loader styles */
+
+.imported-competitions-card,
+.credentials-error,
+.importing-loader {
+	display: none;
+}
+
+.loader-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #242341de;
+	z-index: 9999999;
+}
+
+.loader {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.spin-loader {
+	border-radius: 80%;
+	display: block;
+	height: 50px;
+	width: 50px;
+	position: relative;
+	-webkit-animation: spin 0.675s linear 0s infinite normal;
+	animation: spin 0.675s linear 0s infinite normal;
+}
+
+.spin-loader:before,
+.spin-loader:after {
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+.spin-loader:before {
+	border-radius: 0 90px 90px 0;
+	height: 50px;
+	width: 50%;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	background: #005041;
+	background-image: linear-gradient(#26a69a, #005041);
+}
+
+.spin-loader:after {
+	border-radius: 80%;
+	height: 40px;
+	width: 40px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	background: #242341;
+}
+
+@-webkit-keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Product list styles */
+.avatar-upload-form-wrapper,
+.list-wrapper,
+.listing-not-found,
+.draft-load-btn-wrapper,
+.profile_pic_success,
+.published-load-btn-wrapper,
+.profile_details_success,
+.result {
+	display: none;
+}
+
+.profile-photo-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+}
+
+.profile-photo-wrapper .avatar {
+	border-radius: 50%;
+}
+
+.spinner-wrapper {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.spinner-border {
+	display: none;
+	height: 20px;
+	width: 20px;
+	border-width: 3px;
+}
+
+.profile-pic-uploader {
+	display: grid;
+	grid-template-columns: 1fr 100px;
+	gap: 15px;
+	padding-top: 2rem;
+}
+
+.profile_pic {
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	border: #01b124 3px solid;
+}

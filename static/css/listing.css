@@ -1,0 +1,294 @@
+.featured-competition {
+	background-size: cover;
+	background-position: center;
+}
+
+.featured-competition-inner {
+	padding: 100px 30px;
+	background-color: rgba(36, 35, 65, 0.8);
+}
+
+.featured-competition .title {
+	text-align: center;
+	font-size: 40px;
+}
+
+.featured-competition .meta {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin: 2rem 0;
+	font-size: 24px;
+}
+
+.featured-competition .meta span {
+	display: inline-block;
+	padding: 0 8px;
+	background-color: #07b32b;
+	border-radius: 3px;
+}
+
+.featured-competition .progress {
+	max-width: 500px;
+	margin: auto;
+}
+
+.progress-length-33 .progress-bar {
+	background-color: yellow;
+}
+
+.progress-length-66 .progress-bar {
+	background-color: red;
+}
+
+.slick-dots {
+	bottom: 30px;
+}
+
+.slick-dots {
+	text-align: center;
+}
+
+.slick-dots li {
+	display: inline-block;
+	padding: 1px;
+	background: #ccc;
+	margin: 10px 5px;
+	width: 40px;
+	height: 5px;
+}
+
+.slick-dots li.slick-active {
+	background: #18c495;
+}
+
+.slick-dots button {
+	display: none;
+}
+
+.slick-dots li button::before {
+	display: none;
+}
+
+a.wc-single-lottery-item {
+	width: 500px;
+	min-width: calc(50% - 10px);
+	display: flex;
+	border: 3px solid #07b32b;
+	overflow: hidden;
+	border-radius: 7px;
+	background-color: #242341;
+	text-decoration: none;
+}
+
+.wc-lottery-items-inner {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+	margin: 20px 0;
+	justify-content: flex-start;
+}
+
+.wc-lottery-thumbnail {
+	width: 50%;
+}
+
+.wc-lottery-content {
+	width: 50%;
+	position: relative;
+	z-index: 2;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.wc-lottery-content:after {
+	content: "";
+	height: 102%;
+	width: 50%;
+	border-left: 2px solid #07b32b;
+	top: 0;
+	left: -50px;
+	z-index: -1;
+	background: #242341;
+	position: absolute;
+	transform: skewX(15deg);
+}
+
+.wc-lottery-content h2 {
+	color: #07b32b;
+	font-size: 22px;
+	margin: 0;
+}
+
+.wc-author {
+	color: #fff;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+span.wc-bg {
+	background-color: #07b32b;
+	padding: 2px 12px;
+	color: #fff;
+	display: inline-block;
+	font-weight: 500;
+}
+
+.wc-lottery-meta span.wc-bg {
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+.wc-lottery-meta {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.wc-lottery-meta {
+	color: #fff;
+}
+
+.wc-lottery-thumbnail {
+	position: relative;
+}
+
+.wc-lottery-thumbnail img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	z-index: 99;
+}
+
+.wc-lottery-thumbnail img.avatar {
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+}
+
+.wc-progress-bar {
+	height: 16px;
+	width: 100%;
+	border: 2px solid #07b32b;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.wc-progress-indicator {
+	height: 100%;
+	background: #07b32b;
+	border-radius: 10px;
+	margin-left: -2px;
+}
+.wc-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.wc-col {
+	flex-grow: 1;
+}
+
+.wc-col > * {
+	width: 100%;
+}
+
+.wc-col > * {
+	width: 100%;
+}
+.elementor *,
+.elementor :after,
+.elementor :before {
+	box-sizing: border-box;
+}
+select {
+	background-position-y: center;
+}
+
+.wc-pagination > a,
+.wc-pagination > span {
+	margin: 0;
+	padding: 10px 22px;
+	border: 1px solid #07b32b;
+	color: #07b32b;
+	font-size: 20px;
+	text-decoration: none !important;
+	transition: 0.3s;
+}
+
+.wc-pagination {
+	display: flex;
+	width: 100%;
+}
+.wc-pagination > .current {
+	background: #07b32b;
+	color: #fff;
+}
+.wc-countdown > span span {
+	background-color: #07b32b;
+	padding: 6px 8px;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: normal;
+	text-transform: capitalize;
+	border-radius: 5px;
+}
+
+.wc-countdown {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	width: 100%;
+	max-width: 400px;
+	margin: auto;
+	margin-bottom: 2rem;
+}
+
+.wc-countdown > span span {
+	font-size: 24px;
+}
+
+.wc-countdown > span {
+	flex-grow: 1;
+	text-transform: capitalize;
+	min-width: 58px;
+	text-align: center;
+}
+
+.wc-slod {
+	width: 50%;
+}
+
+.wc-price {
+	width: 100%;
+}
+.wc-progress-bar-66 {
+	border-color: #d91e18;
+}
+
+.wc-progress-bar-66 .wc-progress-indicator {
+	background-color: #d91e18;
+}
+
+.wc-progress-bar-33 {
+	border-color: rgb(226, 151, 11);
+}
+
+.wc-progress-bar-33 .wc-progress-indicator {
+	background-color: rgb(226, 151, 11);
+}

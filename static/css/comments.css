@@ -1,0 +1,126 @@
+#comments .commentlist {
+  list-style-type: none;
+  padding: 0 0 1rem 0;
+}
+#comments .commentlist li {
+  padding-left: 60px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-top: 1rem;
+}
+#comments .commentlist li .comment-body {
+  clear: both;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+#comments .commentlist li .comment-body .comment-author {
+  margin-right: 6px;
+  font-size: 16px;
+  display: block;
+  float: left;
+  line-height: 20px;
+}
+#comments .commentlist li .comment-body .comment-author cite a,
+#comments .commentlist li .comment-body .comment-author cite {
+  font-style: normal;
+  color: #141c3a;
+  font-style: normal;
+  font-weight: 600;
+}
+#comments .commentlist li .comment-body .comment-author .says {
+  display: none;
+}
+#comments .commentlist li .comment-body .comment-meta {
+  font-size: 13px;
+  display: block;
+  float: left;
+  line-height: 20px;
+}
+#comments .comment-reply-title small a,
+#comments .commentlist li .comment-body .reply a,
+#comments .commentlist li .comment-body .comment-meta a {
+  color: #888;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+#comments .commentlist li .comment-body p {
+  margin-bottom: 8px;
+  color: #505966;
+  clear: both;
+}
+#comments .commentlist li .comment-body .avatar {
+  position: absolute;
+  left: -60px;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+#comments .commentlist li .children {
+  list-style-type: none;
+  padding: 0;
+}
+
+#comments .comment-form .comment-form-author {
+  width: 49.2%;
+  float: left;
+}
+#comments .comment-form .comment-form-email {
+  width: 49.2%;
+  float: right;
+}
+
+#comments .comment-form .comment-form-url {
+  display: none;
+}
+
+#comments h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+#comments .comment-reply-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#comments .comment-reply-title small {
+  margin-left: 15px;
+}
+#comments .comment-reply-title small a,
+#comments .commentlist li .comment-body .reply a {
+  background: #4038c7;
+  border-radius: 0.1875rem;
+  position: relative;
+  display: inline-block;
+  padding: 6px 15px;
+  text-transform: uppercase;
+  font-size: 10px !important;
+  line-height: 10px;
+  color: #fff;
+  font-weight: 500;
+  transition: all ease-in-out 0.3s;
+  text-decoration: none;
+}
+#comments .comment-reply-title small a:hover,
+#comments .commentlist li .comment-body .reply a:hover {
+  background: #251e93;
+}
+
+#comments .form-submit .submit {
+  border: #ddd 1px solid;
+  padding: 15px 20px;
+  color: #fff;
+  background-color: #4038c7;
+}
+
+#comments .form-submit .submit:hover {
+  background-color: #251e93;
+}
+
+textarea#comment {
+  height: 8rem;
+}

@@ -1,0 +1,114 @@
+.dark_them {
+  background-color: #333;
+}
+
+.dark_them .dark_theme_btn::before {
+    background-image: url(./static/icons/sun.svg);
+}
+
+.dark_them .navbar {
+  background-color: #333;
+}
+
+.dark_them .navbar-light .navbar-brand {
+  color: #eee;
+}
+
+.dark_them .logo {
+  background-image: url(./static/img/logo_light.svg);
+}
+
+.dark_them .search_form_input,
+.dark_them .nav_menu_wrapper ul li a {
+  color: #eee;
+}
+
+.dark_them .search_form_btn::before,
+.dark_them .nav_search_toggler::before {
+    background-image: url(./static/icons/search_light.svg);
+}
+
+.dark_them .nav_menu_toggler::before {
+  background-image: url(./static/icons/menu_light.svg);
+}
+
+.dark_them .mobile_nav_closer_btn::before,
+.dark_them .nav_search_closer::before {
+  background-image: url(./static/icons/x_light.svg);
+}
+
+.dark_them .facebook_social_link::before {
+  background-image: url(./static/icons/facbook_light.svg);
+}
+
+.dark_them .twitter_social_link::before {
+  background-image: url(./static/icons/twitter_light.svg);
+}
+
+.dark_them .instagarm_social_link::before {
+  background-image: url(./static/icons/instagram_light.svg);
+}
+
+.dark_them .linkedin_social_link::before {
+  background-image: url(./static/icons/linkedin_light.svg);
+}
+
+.dark_them .search_form_input,
+.dark_them .nav_searchform_wrapper {
+  background-color: #333;
+}
+
+.dark_them .wp-pagenavi span.current {
+  border-bottom-color: #f67938;
+}
+
+.dark_them .wp-pagenavi span.current {
+  border-top-color: #85919d36;
+}
+.dark_them .wp-pagenavi a,
+.dark_them .wp-block-latest-posts__list,
+.dark_them .wp-block-latest-posts__list li a,
+.dark_them .footer ul.social_network_list li a,
+.dark_them .footer,
+.dark_them .nav_searchform_wrapper,
+.dark_them .navbar,
+.dark_them .search_form_input{
+  border-color: #85919d36;
+}
+
+.dark_them .wp-pagenavi a:hover,
+.dark_them .wp-pagenavi a:active {
+  border-bottom-color: #f67938;
+}
+
+.dark_them .footer {
+  background-color: #333;
+}
+
+.dark_them .random-post .post-meta h2,
+.dark_them .wp-block-latest-posts__list li a,
+.dark_them .footer-widget-title,
+.dark_them .copyright_text,
+.dark_them .footer ul li a,
+.dark_them .footer .textwidget p,
+.dark_them .navbar-brand {
+  color: #eee;
+}
+
+.dark_them .random-post .post-meta a:hover h2,
+.dark_them .footer ul li a:hover,
+.dark_them .nav_menu_wrapper ul li a:hover {
+  color: #f67938;
+}
+
+.dark_them .wp-pagenavi a:hover,
+.dark_them .wp-pagenavi a:active,
+.dark_them .wp-pagenavi span.current { color: #eee; }
+
+.dark_them .wp-block-latest-posts__list {
+  background-color: #484848;
+}
+
+.dark_them .wp-block-latest-posts__list li a:hover {
+  color: #f67938;
+}
