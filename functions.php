@@ -30,6 +30,10 @@ require_once( __DIR__ . '/includes/functions/load_svg.php');
 // add short code
 require_once( __DIR__ . '/includes/functions/shortcode.php');
 
+// add short code
+require_once( __DIR__ . '/includes/functions/filter.php');
+
+
 
 // Ajax handler for draft posts
 function get_draft_posts_callback() {
@@ -235,6 +239,3 @@ function update_profile_details() {
     wp_send_json_success( );
 
 }
-
-
-// joynal code added

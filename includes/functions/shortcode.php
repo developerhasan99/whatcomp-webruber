@@ -22,7 +22,7 @@ function lottery_list_shortcode2($atts) {
     <div class="wc-lottery-filter-wrapper">
         <div class="wc-row">
             <div class="wc-col">
-                <select class="form-select" name="lottery_category" class="wc-filter-lottery-category">
+                <select class="form-select wc-filter-lottery-category" name="lottery_category" >
                     <?php
                         $terms = get_terms( array(
                             'taxonomy' => 'category',
@@ -36,14 +36,14 @@ function lottery_list_shortcode2($atts) {
                 </select>
             </div>
             <div class="wc-col">
-                <select class="form-select" name="lottery_price" class="wc-filter-lottery-price">
+                <select class="form-select wc-filter-lottery-price" name="lottery_price" >
                     <option value="">Price</option>
                     <option value="ASC">Low to High</option>
                     <option value="DESC">High to Low</option>
                 </select>
             </div>            
             <div class="wc-col">
-                <input class="form-control" type="text" placeholder="search" class="wc-filter-lottery-text" style="">
+                <input class="form-control wc-filter-lottery-text" type="text" placeholder="search"  style="">
             </div>
         </div>
         <div class="wc-row"></div>
@@ -136,22 +136,98 @@ function lottery_list_shortcode2($atts) {
 		$total_pages = $listing_query->max_num_pages;
 
 		if ( $total_pages > 1 ) {
-		  $current_page = max( 1, get_query_var( 'paged' ) );
-		  echo '<div class="wc-pagination">';
-		  echo paginate_links( array(
+			$current_page = max( 1, get_query_var( 'paged' ) );
+			echo '<div class="wc-pagination">';
+			echo paginate_links( array(
 			'base' => get_pagenum_link(1) . '%_%',
 			'format' => 'page/%#%',
 			'current' => $current_page,
 			'total' => $total_pages,
 			'show_all' => true,
 			'prev_next' => false,
-		  ) );
-		  echo '</div>';
-		}	
-	  } else {
+			) );
+			echo '</div>';
+		}
+
+		?>
+			<script>
+				(function ($) {
+					"use strict";
+					$(document).ready(function () {
+						function wc_filter_function(page_num) {
+							var category = $(".wc-filter-lottery-category").val();
+							var price = $(".wc-filter-lottery-price").val();
+							var text = $(".wc-filter-lottery-text").val();
+
+							if (page_num) {
+								var paged = page_num;
+							} else {
+								var paged = "";
+							}
+
+							console.log(paged);
+							var ajaxurl = wc_ajax_object.ajax_url;
+
+							$.ajax({
+								url: ajaxurl,
+								type: "post",
+								data: {
+									action: "load_posts_by_category",
+									category: category,
+									price: price,
+									text: text,
+									paged: paged,
+								},
+
+								beforeSend: function () {
+									if (page_num) {
+										$(".wc-lottery-items-inner").html("Loading...");
+									} else {
+										$(".wc-lottery-items-wrapper").html("Loading...");
+									}
+								},
+								success: function (response) {
+									if (page_num) {
+										$(".wc-lottery-items-inner").html(response);
+									} else {
+										$(".wc-lottery-items-wrapper").html(response);
+									}
+								},
+								error: function () {
+									console.log("Error occurred");
+								},
+							});
+						}
+
+						$(".wc-filter-lottery-category").change(function () {
+							wc_filter_function();
+						});
+
+						$(".wc-filter-lottery-price").change(function () {
+							wc_filter_function();
+						});
+						$(".wc-filter-lottery-text").on("keypress", function () {
+							wc_filter_function();
+						});
+
+						$(".wc-pagination>.page-numbers").click(function () {
+							wc_filter_function($(this).text());
+							$(this).addClass("current").siblings().removeClass("current");
+						});
+
+						$(".wc-pagination>.page-numbers").click(function (event) {
+							event.preventDefault();
+						});
+					});
+				})(jQuery);
+			</script>
+		<?php
+
+		
+	}else {
 		// No posts found
-	  }
-	  wp_reset_postdata();
+	}
+	wp_reset_postdata();
 	
 	?>
 		
