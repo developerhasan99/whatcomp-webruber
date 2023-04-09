@@ -232,6 +232,7 @@ select {
 .wc-pagination {
 	display: flex;
 	width: 100%;
+	justify-content: center;
 }
 .wc-pagination > .current {
 	background: #07b32b;
@@ -293,22 +294,22 @@ select {
 	background-color: rgb(226, 151, 11);
 }
 
-@media screen and (max-width:1043px){
-    a.wc-single-lottery-item {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    a.wc-single-lottery-item>div {
-        width: 100%;
-    }
-    
-    .wc-lottery-thumbnail img {
-        height: 250px;
-    }
-    
-    .wc-lottery-items-inner {
-        display: flex;
-        justify-content: center;
-    }
+@media screen and (max-width: 1043px) {
+	a.wc-single-lottery-item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	a.wc-single-lottery-item > div {
+		width: 100%;
+	}
+
+	.wc-lottery-thumbnail img {
+		height: 250px;
+	}
+
+	.wc-lottery-items-inner {
+		display: flex;
+		justify-content: center;
+	}
 }
