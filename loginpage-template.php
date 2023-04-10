@@ -16,27 +16,18 @@ if(isset($_POST['username'])){
 
     $credentials = array(
         'user_login' => $username,
-        'user_password' => $password
+        'user_password' => $password,
+        'remember' => $remember
     );
 
     // Get user object from WP_SIGNON()
-    $user = wp_signon( $credentials, $remember );
+    $user = wp_signon( $credentials, false );
 
     //successfully logged in
     if(!isset($user->errors)){ 
         session_start();  //check for wp_session storage 
         $_SESSION["new_dashboard"] = '1';  //if you want to redirect user to a new page or set any conditions on login
         
-        //set cookie for remember me 
-        $user_login_details = $email.'_pass_'.$password;
-        
-        if(!empty($_POST["remember"])) {
-            setcookie ("user_login_details",$user_login_details, time() + ( 7 * 24 * 60 * 60)); //set cookie time as per you need
-        } else {  //remove login details from cookie
-            if(isset($_COOKIE["user_login_details"])) {
-                setcookie ("user_login_details","");
-            }
-        }
         wp_redirect($dashboard);
         exit;
     } else {
