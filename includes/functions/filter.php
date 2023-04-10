@@ -55,7 +55,8 @@ function load_posts_by_category() {
               <a href="<?php echo get_field('url') ? get_field('url') : "#"; ?>" class="wc-single-lottery-item" target="_blank">
                   <div class="wc-lottery-thumbnail">
                       <img src="<?php echo get_field('thumbnail_url') ?>" alt="Thumbnail">		
-                      <?php echo get_avatar(  get_the_author_meta( 'ID' ), 32); ?>		
+                      <?php $author_id = $post->post_author; ?>
+                      <img class="avatar" src="<?php echo get_the_author_meta('profile_pic_url', $author_id); ?>" alt="Author">		
                   </div>
                   <div class="wc-lottery-content">
                     <div class="title-info">
@@ -131,7 +132,8 @@ function load_posts_by_category() {
               <a href="<?php echo get_field('url') ? get_field('url') : "#"; ?>" class="wc-single-lottery-item" target="_blank">
                   <div class="wc-lottery-thumbnail">
                       <img src="<?php echo get_field('thumbnail_url') ?>" alt="Thumbnail">		
-                      <?php echo get_avatar(  get_the_author_meta( 'ID' ), 32); ?>		
+                      <?php $author_id = $post->post_author; ?>
+                      <img class="avatar" src="<?php echo get_the_author_meta('profile_pic_url', $author_id); ?>" alt="Author">			
                   </div>
                   <div class="wc-lottery-content">
                     <div class="title-info">
