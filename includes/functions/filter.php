@@ -16,7 +16,7 @@ function load_posts_by_category() {
     }
 
     $args = array(
-        'post_type' => 'listing',
+        'post_type' => 'post',
         'post_status' => 'publish',
         'orderby' => 'date', // Order by post date
         'paged' => $paged, // Add pagination parameter

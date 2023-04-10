@@ -19,7 +19,7 @@ function webruber_add_theme_scripts() {
     wp_enqueue_style( 'featured-post', get_template_directory_uri() . '/static/css/featured-post.css', [], '1', 'all' );
     wp_enqueue_style( 'footer', get_template_directory_uri() . '/static/css/footer.css', [], '1', 'all' );
     wp_enqueue_style( 'overwrite', get_template_directory_uri() . '/static/css/listing.css', [], '1', 'all' );
-    // if( is_single(  )) wp_enqueue_style( 'single', get_template_directory_uri() . '/static/css/single.css', [], '1', 'all' );
+    wp_enqueue_style( 'single', get_template_directory_uri() . '/static/css/single.css', [], '1', 'all' );
     // if( is_singular() && get_option( 'thread_comments' )) wp_enqueue_style( 'comments', get_template_directory_uri() . '/static/css/comments.css', [], '1', 'all' );
     // wp_enqueue_style( 'theme-widgets', get_template_directory_uri() . '/static/css/widgets.css', [], '1', 'all' );
 

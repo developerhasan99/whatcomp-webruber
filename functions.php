@@ -60,7 +60,7 @@ function get_draft_posts_callback() {
             $draft_posts[] = array(
                 'title' => get_the_title(),
                 'id'  => get_the_ID(  ),
-                'expires' => do_shortcode( '[postexpirator type=date dateformat="d-m-Y"]' )
+                'expires' => date("d-m-Y", strtotime(get_field('withdraw_date')))
             );
         }
     }
@@ -99,7 +99,7 @@ function get_published_posts_callback() {
             $published_posts[] = array(
                 'title' => get_the_title(),
                 'id'  => get_the_ID(  ),
-                'expires' => do_shortcode( '[postexpirator type=date dateformat="d-m-Y"]' )
+                'expires' => date("d-m-Y", strtotime(get_field('withdraw_date')))
             );
         }
     }
@@ -238,4 +238,11 @@ function update_profile_details() {
 
     wp_send_json_success( );
 
+}
+
+
+// To change add to cart text on single product page
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_single_add_to_cart_text' ); 
+function woocommerce_custom_single_add_to_cart_text() {
+    return __( 'Buy Now', 'woocommerce' ); 
 }

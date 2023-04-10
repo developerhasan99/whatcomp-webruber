@@ -9,7 +9,7 @@ function lottery_list_shortcode2($atts) {
     ob_start();
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$args = array(
-	  'post_type' => 'listing',
+	  'post_type' => 'post',
 	  'post_status' => 'publish',
 	  'paged' => $paged, // Add pagination parameter
 

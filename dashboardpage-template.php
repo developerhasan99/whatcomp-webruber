@@ -92,7 +92,7 @@ get_template_part( 'includes/components/dashboard-header', 'dashboard' );
                                             
                                         <tr>
                                             <td><?php the_title(); ?></td>
-                                            <td><?php echo do_shortcode( '[postexpirator type=date dateformat="d-m-Y"]' ); ?></td>
+                                            <td><?php echo date("d-m-Y", strtotime(get_field('withdraw_date'))); ?></td>
                                         </tr>
 
                                     <?php endwhile; endif; wp_reset_postdata(); ?>
