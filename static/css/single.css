@@ -1,3 +1,4 @@
+.login_page,
 .single-page-wrapper,
 .woocommerce-checkout .woocommerce,
 .woocommerce-form-coupon-toggle.single-page-wrapper {
@@ -37,4 +38,32 @@
 	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login_page {
+	max-width: 500px;
+	margin: auto;
+}
+
+.et-db
+	#et-boc
+	.et_pb_module
+	.forminator-ui.forminator-custom-form[data-design="default"]
+	.forminator-checkbox
+	.forminator-checkbox-box
+	~ span,
+.forminator-ui.forminator-custom-form[data-design="default"]
+	.forminator-checkbox
+	.forminator-checkbox-box
+	~ span,
+.forminator-ui#forminator-module-1455.forminator-design--default
+	.forminator-label {
+	color: #eee !important;
+	font-size: 16px !important;
+	margin-bottom: 0.5rem !important;
+}
+
+.forminator-button-submit {
+	width: 100% !important;
+	background-color: #01b124 !important;
 }
