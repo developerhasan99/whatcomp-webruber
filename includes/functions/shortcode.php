@@ -67,7 +67,7 @@ function lottery_list_shortcode2($atts) {
   
 		  <a href="<?php echo get_field('url') ? get_field('url') : "#"; ?>" class="wc-single-lottery-item" target="_blank">
 			  <div class="wc-lottery-thumbnail">
-				  <img src="<?php echo get_field('thumbnail_url') ?>" alt="Thumbnail">		
+				  <img src="<?php echo get_field('thumbnail_url') ? get_field('thumbnail_url') : get_template_directory_uri(  ) . '/static/img/placeholder.png' ?>" alt="Thumbnail">		
 				  <img class="avatar" src="<?php echo get_the_author_meta('profile_pic_url', $author_id); ?>" alt="Author">		
 			  </div>
 			  <div class="wc-lottery-content">
