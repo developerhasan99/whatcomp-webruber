@@ -23,15 +23,33 @@ function lottery_list_shortcode2($atts) {
         <div class="wc-row">
             <div class="wc-col">
                 <select class="form-select wc-filter-lottery-category" name="lottery_category" >
+				<option value="" disabled selected hidden>Competition site</option>
                     <?php
-                        $terms = get_terms( array(
-                            'taxonomy' => 'category',
-                            'hide_empty' => false,
-                        ) );
-                        echo '<option value=""> Categories </option>';
-                        foreach ( $terms as $term ) {
-                            echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
-                        }
+
+						$role = 'list_poster'; // set the role here
+						$args = array(
+							'role' => $role,
+							'orderby' => 'user_nicename',
+							'fields' => 'all'
+						);
+						$users = get_users($args);
+
+						foreach ($users as $user) {
+							$args = array(
+								'author' => $user->ID,
+								'post_type' => 'post',
+								'post_status' => 'publish'
+							);
+							$query = new WP_Query($args);
+							if ($query->have_posts()) {
+								$first_name = get_user_meta( $user->ID, 'first_name', true );
+								$last_name = get_user_meta( $user->ID, 'last_name', true );
+								$full_name = $first_name . ' ' . $last_name;
+								$display_name = $full_name ? $full_name : $user->user_login;
+								echo '<option value="'. $user->user_login .'">'. $display_name .'</option>';
+							}
+							wp_reset_postdata();
+						}
                     ?>
                 </select>
             </div>

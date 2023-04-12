@@ -28,13 +28,7 @@ function load_posts_by_category() {
     }
 
     if($category != ''){
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'lottery_category', // replace with your taxonomy name
-                'field' => 'slug', // use 'slug' or 'term_id' depending on your needs
-                'terms' => $category // replace with your taxonomy term slug or ID
-            )
-            );
+        $args['author_name'] = $category;
     }
 
     if ($price_type && $price_type != '') {
@@ -291,6 +285,7 @@ function load_posts_by_category() {
 		<?php
         }else {
             // No posts found
+            echo $category;
         }
     }
 
