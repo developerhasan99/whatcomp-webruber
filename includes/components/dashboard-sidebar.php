@@ -28,6 +28,11 @@ $path = $wp->request;
             <i class="fa-regular fa-user"></i> Profile
             </a>
         </li>
+        <li class="list-group-item <?php if ($path === 'invoices') echo 'active' ?>">
+            <a href="<?php echo home_url( 'invoices' ); ?>">
+            <i class="fa-solid fa-file-invoice"></i> Invoices
+            </a>
+        </li>
         <li class="list-group-item">
             <a href="<?php echo wp_logout_url( home_url('log-in') ); ?>">
                 <i class="fa-solid fa-right-from-bracket"></i> Logout!
