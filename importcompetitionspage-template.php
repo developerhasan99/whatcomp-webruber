@@ -51,7 +51,7 @@ get_template_part( 'includes/components/dashboard-header', 'dashboard' );
 
                                 <div class="my-4">
                                     <h3><i>Automatic data pulling is running!</i></h3>
-                                    <p>Every new listing will be automatically pull in every 2 hours.</p>
+                                    <p>Every new listing will be automatically pull in every 45 minutes.</p>
                                 </div>
 
                             <?php } else { ?>

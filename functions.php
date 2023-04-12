@@ -140,7 +140,7 @@ function make_featured_post() {
     if ( $post_id ) {
 
         $current_token = gamipress_get_user_points($userId, 'token');
-        $new_points = $current_token - 5;
+        $new_points = $current_token - 10;
         gamipress_update_user_points( $user_id, $new_points, get_current_user_id(), null, 'token' );
 
         // Update the post category
@@ -246,3 +246,4 @@ add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_s
 function woocommerce_custom_single_add_to_cart_text() {
     return __( 'Buy Now', 'woocommerce' ); 
 }
+

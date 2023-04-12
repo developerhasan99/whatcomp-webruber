@@ -144,7 +144,7 @@ jQuery(document).ready(function ($) {
 	function makeFeatured(post, button, tr) {
 		// Check if the user has enough tokens to publish the post
 
-		if (currentUserToken < 5) {
+		if (currentUserToken < 10) {
 			alert(
 				"You do not have enough coin to make your competition Featured, please buy token."
 			);
@@ -169,7 +169,7 @@ jQuery(document).ready(function ($) {
 
 				tr.remove();
 
-				currentUserToken = currentUserToken - 5;
+				currentUserToken = currentUserToken - 10;
 				currentUserTokenEl.innerHTML = currentUserToken.toString();
 			},
 			error: function (xhr, status, error) {

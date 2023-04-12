@@ -71,7 +71,7 @@ get_template_part( 'includes/components/dashboard-header', 'dashboard' );
                             </div> 
                         </div>
                     </div>
-                    <div class="card px-3 py-2">
+                    <div class="card mb-3 px-3 py-2">
                         <p class="my-3 px-2">Featured Competitions!</p>
                         <div class="table-responsive">
                             <table class="table table table-bordered">
@@ -86,6 +86,34 @@ get_template_part( 'includes/components/dashboard-header', 'dashboard' );
                                             'author' => $user_id,
                                             'post_status' => 'publish',
                                             'category_name' => 'featured',
+                                            'posts_per_page' => -1
+                                        ));
+                                        if($published_query->have_posts()) : while($published_query->have_posts()) : $published_query->the_post(); ?>
+                                            
+                                        <tr>
+                                            <td><?php the_title(); ?></td>
+                                            <td><?php echo date("d-m-Y", strtotime(get_field('withdraw_date'))); ?></td>
+                                        </tr>
+
+                                    <?php endwhile; endif; wp_reset_postdata(); ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card px-3 py-2">
+                        <p class="my-3 px-2">Expired Competitions!</p>
+                        <div class="table-responsive">
+                            <table class="table table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Expires at</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="featured-posts-table">
+                                    <?php $published_query = new WP_Query(array(
+                                            'author' => $user_id,
+                                            'post_status' => 'expired',
                                             'posts_per_page' => -1
                                         ));
                                         if($published_query->have_posts()) : while($published_query->have_posts()) : $published_query->the_post(); ?>
