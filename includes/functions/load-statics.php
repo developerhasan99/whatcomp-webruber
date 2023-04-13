@@ -30,8 +30,10 @@ function webruber_add_theme_scripts() {
 	wp_enqueue_script( 'countdown', get_template_directory_uri() . '/static/js/countdown.js', ['jquery'], 1.1, true);
 	
     wp_enqueue_script( 'wc-script', get_template_directory_uri() . '/static/js/main.js', ['jquery'], time(), true);
+    // wp_enqueue_script( 'favorite', get_template_directory_uri() . '/static/js/favorite.js', ['jquery'], time(), true);
     
     wp_localize_script( 'wc-script', 'wc_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+    // wp_localize_script( 'favorite', 'wc_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 
     // Load Comment Replay Js
     // if( is_singular() && get_option( 'thread_comments' )) { 

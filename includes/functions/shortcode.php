@@ -99,7 +99,7 @@ function lottery_list_shortcode2($atts) {
 						$user = wp_get_current_user(  );
 
 						if ($user->roles[0] === 'list_viewer') {
-							echo '<button class="btn btn-primary" title="Add to favorite"><i class="fa-regular fa-heart"></i></button>';
+							echo '<button class="btn btn-primary favorite-btn" title="Add to favorite"><i class="fa-regular fa-heart"></i></button>';
 						}
 					
 					?>	
