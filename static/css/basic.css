@@ -14,12 +14,11 @@ html {
 }
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", ubuntu, Arial, sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: "Quicksand", sans-serif;
 	color: #eee;
 	margin: 0;
-	background-image: url(https://lotterylisting.local/wp-content/uploads/2023/04/endless-constellation-1.svg);
+	background-image: linear-gradient(#24234177, #24234177),
+		url(https://lotterylisting.local/wp-content/uploads/2023/04/endless-constellation-1.svg);
 	background-color: #242341;
 	background-position: center;
 	background-attachment: fixed;
@@ -393,4 +392,18 @@ input:-webkit-autofill:focus {
 	width: 80px;
 	border-radius: 50%;
 	border: #01b124 3px solid;
+}
+
+.featured-competitions {
+	box-shadow: 0px 0px 25px 3px rgba(55, 54, 99, 0.75);
+}
+
+.banner-text {
+	text-shadow: 10px 10px 0px #000;
+}
+
+.title-info a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #01b124;
 }

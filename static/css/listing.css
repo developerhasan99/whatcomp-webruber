@@ -73,7 +73,7 @@
 	display: none;
 }
 
-a.wc-single-lottery-item {
+.wc-single-lottery-item {
 	width: 500px;
 	min-width: calc(50% - 10px);
 	display: flex;
@@ -257,7 +257,7 @@ select {
 	width: 100%;
 	max-width: 400px;
 	margin: auto;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .wc-countdown > span span {

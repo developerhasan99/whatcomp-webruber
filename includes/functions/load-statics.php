@@ -9,6 +9,7 @@ if( ! defined('ABSPATH') ) exit;
 
 function webruber_add_theme_scripts() {
     // Load all styles
+    wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap', [], '1', 'all' );
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', [], '1', 'all' );
     wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', [], '1', 'all' );
     wp_enqueue_style( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css', [], '1', 'all' );

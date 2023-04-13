@@ -42,7 +42,7 @@ get_header();
 							$(document).ready(function () {
 
 								$('#wc-withdrow-<?php echo $wc_rend; ?>').countdown('<?php  $date_str = get_field('withdraw_date');  echo date('Y/m/d H:i', strtotime($date_str)); ?>', function(event) {
-									$(this).html(event.strftime('<span><span>%D</span>days</span><span><span>%H</span>Hours</span><span><span>%M</span>munites</span><span><span>%S</span>Seconds</span>'));
+									$(this).html(event.strftime('<span><span>%D</span>days</span><span><span>%H</span>Hours</span><span><span>%M</span>Minutes</span><span><span>%S</span>Seconds</span>'));
 								});
 							});
 						}(jQuery));
@@ -79,6 +79,7 @@ get_header();
         
         <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
+        <h2 class="text-center mb-5 text-uppercase banner-text">All the best competitions in one place</h2>
         <!-- Initial competition list -->
         <?php echo do_shortcode( '[lottery_list2]' ); ?>
     </div>

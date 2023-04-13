@@ -29,7 +29,6 @@ function lottery_list_shortcode2($atts) {
 						$role = 'list_poster'; // set the role here
 						$args = array(
 							'role' => $role,
-							'orderby' => 'user_nicename',
 							'fields' => 'all'
 						);
 						$users = get_users($args);
@@ -83,18 +82,28 @@ function lottery_list_shortcode2($atts) {
 		  ?>
 		  
   
-		  <a href="<?php echo get_field('url') ? get_field('url') : "#"; ?>" class="wc-single-lottery-item" target="_blank">
-			  <div class="wc-lottery-thumbnail">
+		  <div class="wc-single-lottery-item">
+			  <a href="<?php echo get_field('url') ? get_field('url') : "#"; ?>" class="wc-lottery-thumbnail">
 				  <img src="<?php echo get_field('thumbnail_url') ? get_field('thumbnail_url') : get_template_directory_uri(  ) . '/static/img/placeholder.png' ?>" alt="Thumbnail">		
-				  <img class="avatar" src="<?php echo get_the_author_meta('profile_pic_url', $author_id); ?>" alt="Author">		
-			  </div>
+				  <img class="avatar" src="<?php echo get_the_author_meta('profile_pic_url', $author_id); ?>" alt="Author">	
+			  </a>
 			  <div class="wc-lottery-content">
 				<div class="title-info">
-					<h2><?php the_title(); ?></h2>
+					<h2><a href="<?php echo get_field('url') ? get_field('url') : "#"; ?>" ><?php the_title(); ?></a></h2>
 					<div class="wc-author">
 						<span>By</span>
 						<span><?php the_author() ?></span>
 					</div>
+					<?php 
+				  
+						$user = wp_get_current_user(  );
+
+						if ($user->roles[0] === 'list_viewer') {
+							echo '<button class="btn btn-primary" title="Add to favorite"><i class="fa-regular fa-heart"></i></button>';
+						}
+					
+					?>	
+					
 				</div>
 
 				  <div class="wc-lottery-meta">
@@ -112,7 +121,7 @@ function lottery_list_shortcode2($atts) {
 							$(document).ready(function () {
 
 								$('#wc-withdrow-<?php echo $wc_rend; ?>').countdown('<?php  $date_str = get_field('withdraw_date');  echo date('Y/m/d H:i', strtotime($date_str)); ?>', function(event) {
-									$(this).html(event.strftime('<span><span>%D</span>days</span><span><span>%H</span>Hours</span><span><span>%M</span>munites</span><span><span>%S</span>Seconds</span>'));
+									$(this).html(event.strftime('<span><span>%D</span>days</span><span><span>%H</span>Hours</span><span><span>%M</span>Minutes</span><span><span>%S</span>Seconds</span>'));
 								});
 
 							});
@@ -145,7 +154,7 @@ function lottery_list_shortcode2($atts) {
 					  </div>
 				  </div>
 			  </div>
-		  </a>
+		  </div>
   
 		  <?php
 		}	
