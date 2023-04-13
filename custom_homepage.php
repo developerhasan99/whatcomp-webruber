@@ -1,5 +1,5 @@
 <?php 
-// Template Name: Home Page Template
+// Template Name: Home Page
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 

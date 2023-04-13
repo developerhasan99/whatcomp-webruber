@@ -1,5 +1,5 @@
 <?php 
-// Template name: Login page template
+// Template name: Login page
 
 // redirect to dashboard if user is logged in
 $dashboard = home_url( 'dashboard' );

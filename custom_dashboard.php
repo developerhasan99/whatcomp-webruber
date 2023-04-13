@@ -1,5 +1,5 @@
 <?php 
-// Template Name: Dashboard template
+// Template Name: Dashboard
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 

@@ -47,7 +47,7 @@ if( ! defined('ABSPATH') ) exit;
                         </a>
                     </li>
                 </ul>
-                <p class="copyright_text">&copy; <?php echo copydate(); ?> <strong><?php bloginfo(); ?></strong> - All Rights Reserved.</p>
+                <p class="copyright_text">&copy; <?php echo date("Y"); ?> <strong><?php bloginfo(); ?></strong> - All Rights Reserved.</p>
             </div>
         </div>
     </div>

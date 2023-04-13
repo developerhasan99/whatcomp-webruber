@@ -1,5 +1,5 @@
 <?php 
-// Template Name: Registration page template
+// Template Name: Registration page
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 

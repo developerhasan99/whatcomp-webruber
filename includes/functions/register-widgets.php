@@ -9,18 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 function arphabet_widget_init() {
     register_sidebar( array(
-      'name'          => 'Primary sidebar',
-      'id'            => 'primary-sidebar',
-      'before_widget' => '<div class="pb-5">',
-      'after_widget'  => '</div>',
-    ) );
-    register_sidebar( array(
-      'name'          => 'Header Widget',
-      'id'            => 'header-widget',
-      'before_widget' => '<div>',
-      'after_widget'  => '</div>',
-    ) );
-    register_sidebar( array(
       'name'          => 'Footer 1',
       'id'            => 'footer-widget-1',
       'before_widget' => '<div class="pb-5">',

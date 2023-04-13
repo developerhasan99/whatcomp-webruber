@@ -1,5 +1,5 @@
 <?php 
-// Template Name: Import Competitions page template
+// Template Name: Import Competition
 
 $user = wp_get_current_user(  );
 

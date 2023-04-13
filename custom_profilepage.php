@@ -1,5 +1,5 @@
 <?php 
-// Template Name: Profile page template
+// Template Name: Profile page
 
 $is_error = '';
 $is_success = '';

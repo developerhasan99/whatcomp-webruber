@@ -1,5 +1,5 @@
 <?php 
-// Template Name: Add Competition page template
+// Template Name: Add Competition
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 $is_error = false;
