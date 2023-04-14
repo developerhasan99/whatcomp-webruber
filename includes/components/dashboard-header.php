@@ -32,7 +32,7 @@ $user = wp_get_current_user(  );
                     <span class="coin">WC</span>
                     <span id="current-user-token"><?php echo gamipress_get_user_points($user->id , 'token'); ?></span>
                 </div>
-                <a href="<?php echo home_url( 'coins/buy-coins' ); ?>" type="button" class="btn btn-success ml-3">Buy Coin</a>
+                <a href="<?php echo home_url( 'buy-coins' ); ?>" type="button" class="btn btn-success ml-3">Buy Coin</a>
                 
                 <?php } ?>
 

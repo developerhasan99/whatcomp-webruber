@@ -137,7 +137,24 @@ get_template_part( 'includes/components/dashboard-header', 'dashboard' );
                 <?php } else { ?>
 
                 <div class="col-md-8 mb-5">
+                    <div class="card mb-3 px-3 py-2">
+                        <p class="my-3 px-2">Favorite Competitions!</p>
+                        <div class="table-responsive">
+                            <table class="table table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Ending</th>
+                                        <td scope="col">Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="favorite-posts-table">
 
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
                 </div>
 
                 <?php } ?>

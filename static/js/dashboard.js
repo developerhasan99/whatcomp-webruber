@@ -2,44 +2,56 @@ jQuery(document).ready(function ($) {
 	let draftPostOffset = 0;
 	let publishedPostOffset = 0;
 	let currentUserTokenEl = document.getElementById("current-user-token");
-	let currentUserToken = parseInt(currentUserTokenEl.innerText);
+	let currentUserToken = currentUserTokenEl
+		? parseInt(currentUserTokenEl.innerText)
+		: undefined;
 
 	// Get table of posts
 	const draftPostTable = document.querySelector(".draft-posts-table");
 	const publishedPostTable = document.querySelector(".published-posts-table");
 	const featuredPostTable = document.querySelector(".featured-posts-table");
+	const favoritePostTable = document.querySelector(".favorite-posts-table");
 
 	// initially load the draft posts
-	fetchPosts("get_draft_posts", draftPostOffset, function (error, response) {
-		if (!error) {
-			renderPosts(response, "draft", draftPostTable);
-
-			draftPostOffset = draftPostOffset + response.length;
-
-			if (response.length === 10) {
-				$(".draft-load-btn-wrapper").fadeIn();
-			}
-		}
-		// Handle error with an else clause
-	});
-
-	// initially load the published posts
-	fetchPosts(
-		"get_published_posts",
-		publishedPostOffset,
-		function (error, response) {
+	if (currentUserTokenEl) {
+		fetchPosts("get_draft_posts", draftPostOffset, function (error, response) {
 			if (!error) {
-				renderPosts(response, "published", publishedPostTable);
+				renderPosts(response, "draft", draftPostTable);
 
-				publishedPostOffset = publishedPostOffset + response.length;
+				draftPostOffset = draftPostOffset + response.length;
 
 				if (response.length === 10) {
-					$(".published-load-btn-wrapper").fadeIn();
+					$(".draft-load-btn-wrapper").fadeIn();
 				}
 			}
 			// Handle error with an else clause
-		}
-	);
+		});
+		// initially load the published posts
+		fetchPosts(
+			"get_published_posts",
+			publishedPostOffset,
+			function (error, response) {
+				if (!error) {
+					renderPosts(response, "published", publishedPostTable);
+
+					publishedPostOffset = publishedPostOffset + response.length;
+
+					if (response.length === 10) {
+						$(".published-load-btn-wrapper").fadeIn();
+					}
+				}
+				// Handle error with an else clause
+			}
+		);
+	} else {
+		// load favorite posts
+		fetchPosts("get_favorite_posts", 0, function (error, response) {
+			if (!error) {
+				renderPosts(response, "favorite", favoritePostTable);
+			}
+			// Handle error with an else clause
+		});
+	}
 
 	// Load draft posts on button click
 	$("#draft-load-btn").on("click", function (e) {
@@ -178,6 +190,29 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
+	// Delete favorite competitions
+	function deleteFavorite(post, button, tr) {
+		button.innerText = "Deleting...";
+		button.setAttribute("disabled", true);
+
+		var data = {
+			action: "delete_favorite_post",
+			post_id: post.id,
+		};
+
+		$.ajax({
+			url: ajaxurl,
+			type: "POST",
+			data,
+			success: function (response) {
+				tr.remove();
+			},
+			error: function (xhr, status, error) {
+				console.log(error);
+			},
+		});
+	}
+
 	// Render posts
 	function renderPosts(posts, postType, parent) {
 		posts.forEach(function (post) {
@@ -195,22 +230,35 @@ jQuery(document).ready(function ($) {
 
 		const postBtn = document.createElement("td");
 		const button = document.createElement("button");
+
 		button.className =
 			postType === "draft"
 				? "btn btn-primary btn-small"
 				: "btn btn-success btn-small";
+		button.className =
+			postType === "favorite" ? "btn btn-danger btn-small" : button.className;
+
 		button.innerText = postType === "draft" ? "Publish" : "Make Featured";
+		button.innerText = postType === "favorite" ? "Delete" : button.innerText;
 		postBtn.appendChild(button);
 
 		tr.appendChild(postTitle);
 
-		if (postType === "featured" || postType === "published") {
+		if (
+			postType === "featured" ||
+			postType === "published" ||
+			postType === "favorite"
+		) {
 			const postExp = document.createElement("td");
 			postExp.innerText = post.expires;
 			tr.appendChild(postExp);
 		}
 
-		if (postType === "draft" || postType === "published") {
+		if (
+			postType === "draft" ||
+			postType === "published" ||
+			postType === "favorite"
+		) {
 			tr.appendChild(postBtn);
 		}
 
@@ -226,6 +274,14 @@ jQuery(document).ready(function ($) {
 			});
 		}
 
+		if (postType === "favorite") {
+			button.addEventListener("click", function () {
+				deleteFavorite(post, button, tr);
+			});
+		}
+
 		return tr;
 	}
+
+	// fetch the favorite posts for
 });
