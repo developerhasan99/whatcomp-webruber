@@ -3,7 +3,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-$user_id = get_current_user_id();
+$user = wp_get_current_user();
+$user_id = $user->ID;
 
 get_template_part( 'includes/components/dashboard-header', 'dashboard' );
 
@@ -15,6 +16,9 @@ get_template_part( 'includes/components/dashboard-header', 'dashboard' );
                 <div class="col-md-4 mb-5">
                     <?php get_template_part( 'includes/components/dashboard-sidebar', 'add-competitions' ); ?>
                 </div>
+                
+                <?php if ($user->roles[0] === 'list_poster') { ?>
+                    
                 <div class="col-md-8 mb-5">
                     <div class="mb-3 text-end">
                         <a href="<?php echo home_url( 'add-competition' ); ?>" class="btn btn-success">Add Competition</a>
@@ -129,6 +133,15 @@ get_template_part( 'includes/components/dashboard-header', 'dashboard' );
                         </div>
                     </div>
                 </div>
+
+                <?php } else { ?>
+
+                <div class="col-md-8 mb-5">
+
+                </div>
+
+                <?php } ?>
+
             </div>
         </div>
     </div>

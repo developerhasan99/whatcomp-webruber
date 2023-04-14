@@ -15,11 +15,6 @@
         }            
         ?>
         <div class="nav_menu_wrapper">
-            <div class="mobile_nav_closer_btn_wrapper">
-                <button class="mobile_nav_closer_btn btn"  aria-label="Close nabvar">
-                    <?php echo webruber_svg('x'); ?>
-                </button>
-            </div>
             <?php 
                 if (is_user_logged_in(  )) {
                     $user = wp_get_current_user();
@@ -27,7 +22,7 @@
                     <a href="<?php echo home_url( 'dashboard' ); ?>" class="btn btn-success btn-small">Dashboard</a>
             <?php       }
                     if ($user ->roles[0] === 'list_viewer') { ?>
-                    <a href="<?php echo home_url( 'favorite-competitions' ); ?>" class="btn btn-success btn-small">Favorite Competitions</a>
+                    <a href="<?php echo home_url( 'dashboard' ); ?>" class="btn btn-success btn-small"><i class="fa-solid fa-heart"></i> Favorites</a>
             <?php    }
                 } else { ?>
                 <div>

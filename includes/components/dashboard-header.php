@@ -6,10 +6,6 @@ if ( !is_user_logged_in() ) {
 
 $user = wp_get_current_user(  );
 
-if ($user->roles[0] === 'list_viewer') {
-    wp_redirect( home_url(  ) );
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,17 +24,18 @@ if ($user->roles[0] === 'list_viewer') {
         }            
         ?>
         <div class="nav_menu_wrapper">
-            <div class="mobile_nav_closer_btn_wrapper">
-                <button class="mobile_nav_closer_btn btn"  aria-label="Close nabvar">
-                    <?php echo webruber_svg('x'); ?>
-                </button>
-            </div>
             <div class="dashboard-header-menu-wrapper">
+
+                <?php if ($user->roles[0] === 'list_poster') { ?>
+
                 <div class="whatcomp-coin">
                     <span class="coin">WC</span>
                     <span id="current-user-token"><?php echo gamipress_get_user_points($user->id , 'token'); ?></span>
                 </div>
                 <a href="<?php echo home_url( 'coins/buy-coins' ); ?>" type="button" class="btn btn-success ml-3">Buy Coin</a>
+                
+                <?php } ?>
+
             </div>
         </div>
     </div>

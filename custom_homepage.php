@@ -80,8 +80,59 @@ get_header();
         <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
         <h2 class="text-center mb-5 text-uppercase banner-text">All the best competitions in one place</h2>
+        <!-- competition filter -->
+        <div class="wc-lottery-filter-wrapper">
+            <div class="wc-row">
+                <div class="wc-col">
+                    <select class="form-select wc-filter-lottery-category" name="lottery_category" >
+                        <option value="" selected>Competition site</option>
+                        <?php
+
+                            $role = 'list_poster'; // set the role here
+                            $args = array(
+                                'role' => $role,
+                                'fields' => 'all'
+                            );
+                            $users = get_users($args);
+
+                            foreach ($users as $user) {
+                                $args = array(
+                                    'author' => $user->ID,
+                                    'post_type' => 'post',
+                                    'post_status' => 'publish'
+                                );
+                                $query = new WP_Query($args);
+                                if ($query->have_posts()) {
+                                    $first_name = get_user_meta( $user->ID, 'first_name', true );
+                                    $last_name = get_user_meta( $user->ID, 'last_name', true );
+                                    $full_name = $first_name . ' ' . $last_name;
+                                    $display_name = $full_name ? $full_name : $user->user_login;
+                                    echo '<option value="'. $user->user_login .'">'. $display_name .'</option>';
+                                }
+                                wp_reset_postdata();
+                            }
+                        ?>
+                    </select>
+                </div>
+                <div class="wc-col">
+                    <select class="form-select wc-filter-lottery-price" name="lottery_price" >
+                        <option value="">Price</option>
+                        <option value="ASC">Low to High</option>
+                        <option value="DESC">High to Low</option>
+                    </select>
+                </div>            
+                <div class="wc-col">
+                    <input class="form-control wc-filter-lottery-text" type="text" placeholder="search"  style="">
+                </div>
+            </div>
+            <div class="wc-row"></div>
+        </div>
         <!-- Initial competition list -->
-        <?php echo do_shortcode( '[lottery_list2]' ); ?>
+        <div class="wc-lottery-items-wrapper">
+            <div class="wc-lottery-items-inner">
+                
+            </div>
+        </div>
     </div>
 </div>
 

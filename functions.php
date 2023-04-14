@@ -6,10 +6,9 @@ require_once( __DIR__ . '/includes/functions/load-statics.php');
 require_once( __DIR__ . '/includes/functions/add-theme-supports.php');
 require_once( __DIR__ . '/includes/functions/register-widgets.php');
 require_once( __DIR__ . '/includes/functions/load_svg.php');
-require_once( __DIR__ . '/includes/functions/shortcode.php');
 require_once( __DIR__ . '/includes/functions/filter.php');
 require_once( __DIR__ . '/includes/functions/dashboard-ajax.php');
-require_once( __DIR__ . '/includes/functions/fetch-posts.php');
+require_once( __DIR__ . '/includes/functions/ajax-favorite.php');
 
 // Add instagram username filed to users profile
 function add_instagram_field($fields) {

@@ -295,12 +295,16 @@ select {
 }
 
 @media screen and (max-width: 1043px) {
-	a.wc-single-lottery-item {
+	.wc-single-lottery-item {
 		display: flex;
 		flex-direction: column;
 	}
 
-	a.wc-single-lottery-item > div {
+	.wc-single-lottery-item > div {
+		width: 100%;
+	}
+
+	.wc-lottery-thumbnail {
 		width: 100%;
 	}
 
@@ -311,5 +315,8 @@ select {
 	.wc-lottery-items-inner {
 		display: flex;
 		justify-content: center;
+	}
+	.wc-lottery-content:after {
+		display: none;
 	}
 }

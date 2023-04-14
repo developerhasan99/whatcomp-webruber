@@ -19,53 +19,6 @@ function lottery_list_shortcode2($atts) {
 
 	?>
 
-    <div class="wc-lottery-filter-wrapper">
-        <div class="wc-row">
-            <div class="wc-col">
-                <select class="form-select wc-filter-lottery-category" name="lottery_category" >
-				<option value="" disabled selected hidden>Competition site</option>
-                    <?php
-
-						$role = 'list_poster'; // set the role here
-						$args = array(
-							'role' => $role,
-							'fields' => 'all'
-						);
-						$users = get_users($args);
-
-						foreach ($users as $user) {
-							$args = array(
-								'author' => $user->ID,
-								'post_type' => 'post',
-								'post_status' => 'publish'
-							);
-							$query = new WP_Query($args);
-							if ($query->have_posts()) {
-								$first_name = get_user_meta( $user->ID, 'first_name', true );
-								$last_name = get_user_meta( $user->ID, 'last_name', true );
-								$full_name = $first_name . ' ' . $last_name;
-								$display_name = $full_name ? $full_name : $user->user_login;
-								echo '<option value="'. $user->user_login .'">'. $display_name .'</option>';
-							}
-							wp_reset_postdata();
-						}
-                    ?>
-                </select>
-            </div>
-            <div class="wc-col">
-                <select class="form-select wc-filter-lottery-price" name="lottery_price" >
-                    <option value="">Price</option>
-                    <option value="ASC">Low to High</option>
-                    <option value="DESC">High to Low</option>
-                </select>
-            </div>            
-            <div class="wc-col">
-                <input class="form-control wc-filter-lottery-text" type="text" placeholder="search"  style="">
-            </div>
-        </div>
-        <div class="wc-row"></div>
-    </div>
-
 	<div class="wc-lottery-items-wrapper">
 
 	<?php
@@ -179,77 +132,7 @@ function lottery_list_shortcode2($atts) {
 		}
 
 		?>
-			<script>
-				(function ($) {
-					"use strict";
-					$(document).ready(function () {
-						function wc_filter_function(page_num) {
-							var category = $(".wc-filter-lottery-category").val();
-							var price = $(".wc-filter-lottery-price").val();
-							var text = $(".wc-filter-lottery-text").val();
 
-							if (page_num) {
-								var paged = page_num;
-							} else {
-								var paged = "";
-							}
-
-							console.log(paged);
-							var ajaxurl = wc_ajax_object.ajax_url;
-
-							$.ajax({
-								url: ajaxurl,
-								type: "post",
-								data: {
-									action: "load_posts_by_category",
-									category: category,
-									price: price,
-									text: text,
-									paged: paged,
-								},
-
-								beforeSend: function () {
-									if (page_num) {
-										$(".wc-lottery-items-inner").html("Loading...");
-									} else {
-										$(".wc-lottery-items-wrapper").html("Loading...");
-									}
-								},
-								success: function (response) {
-									if (page_num) {
-										$(".wc-lottery-items-inner").html(response);
-									} else {
-										$(".wc-lottery-items-wrapper").html(response);
-									}
-								},
-								error: function () {
-									console.log("Error occurred");
-								},
-							});
-						}
-
-						$(".wc-filter-lottery-category").change(function () {
-							wc_filter_function();
-						});
-
-						$(".wc-filter-lottery-price").change(function () {
-							wc_filter_function();
-						});
-						$(".wc-filter-lottery-text").on("keypress", function () {
-							wc_filter_function();
-						});
-
-						$(".wc-pagination>.page-numbers").click(function () {
-							wc_filter_function($(this).text());
-							$(this).addClass("current").siblings().removeClass("current");
-						});
-
-						$(".wc-pagination>.page-numbers").click(function (event) {
-							event.preventDefault();
-						});
-					});
-				})(jQuery);
-			</script>
 		<?php
 
 		
